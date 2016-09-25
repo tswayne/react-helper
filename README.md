@@ -17,6 +17,7 @@ project/
   views/
   client/  //<-- New directory  
 ```
+
 * 2. Within the client directory you will need to create a file that will register your components with react-helper.  This file will also be your _entry point_ for webpack (more on that later).
 That file should live here:
 ```javascript
@@ -28,8 +29,8 @@ That file should live here:
     index.js  // <-- New file
 ```
 The file should look something like this:
-```javascript
-const reactHelper = require('./reactHelper');
+ ```javascript
+const reactHelper = require('reactHelper');
 const SomeComponent = require('./path/to/a/component');
 //Require all components you want to use in your views...
 
@@ -37,11 +38,12 @@ const SomeComponent = require('./path/to/a/component');
 reactHelper.register({SomeComponent});
 // register each of the components you will be using in your views
 reactHelper.register({OtherComponent});
-```
+ ```
 * 3. Then, in your controller (or whatever code renders your view template) all you have to do is call react-helper's "renderComponent", and pass the results to your view:
 Controller:
 ```javascript
-const component = viewHelper.renderComponent('SignUp')
+const reactHelper = require('react-helper');
+const component = reactHelper.renderComponent('SignUp')
 res.render('view-to-render', {component})
 ```
 
