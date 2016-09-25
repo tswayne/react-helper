@@ -1,0 +1,20 @@
+{
+  "name": "react-helper",
+  "version": "0.1.0",
+  "description": "A helper that makes it extremely easy to add react to your node app.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "mvc",
+    "node"
+  ],
+  "author": "tswayne",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
