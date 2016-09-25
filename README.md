@@ -74,11 +74,19 @@ Adding it to your application would look just like adding any other local javasc
 <script src="public/javascript/react-bundle.js"></script>
 ```
 
+##Features:
+* Passing properties to components: You can now _easily_ pass data from your server to your registered components.
+Controller (_example passing results from mongo query to react component_):
+```javascript
+  db.collection('users').find().toArray(function(err, users) {
+    const component = reactHelper.renderComponent('ListUsers', users)
+    return res.render('view-to-render', {component})
+  }
+```
 ##In progress features:
 _I am creating this for use in my own project, so this will be progressing quickly_ 
-* Component properties: Passing properties to your components
 * Server-side rendering:  Adding a feature to make server side rendering possible with the flip of a switch.
-
+* Webpack management:  To make it even faster for you to plug in this library and hit the ground running with react, I'm going to include some tools to handle webpack 
 ##Shout out!
 This library is inspired by React On Rails (https://github.com/shakacode/react_on_rails), a library that makes it insanely easy to add react to a Rails application. 
 
