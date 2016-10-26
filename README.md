@@ -1,4 +1,5 @@
 #React Helper
+### Easily add react to your pre-existing node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
 are not many tools out there there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
@@ -39,79 +40,88 @@ add react components to your views, so you can jump right into writing react com
       ```
 
 ##Getting started
-Getting started is simple: 
+   Getting started is simple: 
 
-_For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
+   _For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
 
-1. Create a directory where you will be keeping all of your react code (something like "client").  An express app usually looks similar to this:
-```javascript
-project/
-  controllers/
-  middlewares/
-  models/
-  public/
-  views/
-  client/  //<-- New directory  
-```
+   1. Create a directory where you will be keeping all of your react code (something like "client").  An express app usually looks similar to this:
+   ```javascript
+   project/
+     controllers/
+     middlewares/
+     models/
+     public/
+     views/
+     client/  //<-- New directory  
+   ```
 
-2. Within the client directory you will need to create a file that will register your components with react-helper.  This file will also be your _entry point_ for webpack (more on that later).
-That file should live here:
-```javascript
-  ...
-  views/
-  client/
-    //Other organizational directories for your react code
-    components/
-    index.js  // <-- New file
-```
-The file should look something like this:
- ```javascript
-const reactHelper = require('reactHelper');
-const SomeComponent = require('./path/to/a/component');
-// Require all components you want to use in your views...
+   2. Within the client directory you will need to create a file that will register your components with react-helper.  This file will also be your _entry point_ for webpack (more on that later).
 
 
-reactHelper.register({SomeComponent});
-// Register each of the components you will be using in your views
-reactHelper.register({OtherComponent});
- ```
-3. Then, in your controller (or whatever code renders your view template) all you have to do is call react-helper's "renderComponent", and pass the results to your view:
-Controller:
-```javascript
-const reactHelper = require('react-helper');
-const component = reactHelper.renderComponent('SignUp')
-res.render('view-to-render', {component})
-```
+   That file should live here:
+   ```javascript
+     ...
+     views/
+     client/
+       //Other organizational directories for your react code
+       components/
+       index.js  // <-- New file
+   ```
+   The file should look something like this:
+   ```javascript
+   const reactHelper = require('reactHelper');
+   const SomeComponent = require('./path/to/a/component');
+   // Require all components you want to use in your views...
 
-View:
-```html
-<h1>This view has react in it</h1>
-{{{component}}}
-```
+
+   reactHelper.register({SomeComponent});
+   // Register each of the components you will be using in your views
+   reactHelper.register({OtherComponent});
+   ```
+   3. Then, in your controller (or whatever code renders your view template) all you have to do is call react-helper's "renderComponent", and pass the results to your view:
+   
+   **Controller**:
+   ```javascript
+   const reactHelper = require('react-helper');
+   const component = reactHelper.renderComponent('SignUp')
+   res.render('view-to-render', {component})
+   ```
+
+   **View**:
+   ```html
+   <h1>This view has react in it</h1>
+   {{{component}}}
+   ```
 
 ##Setup
-The only setup needed is to add webpack to your project, point it to the react-helper registration file, and include the resulting javascript file in your project.
-1. The only requirement react-helper has for the webpack config is that the entry point is the file that registers all of the components using react-helper.
-In the example above it would look something like this:
-```javascript
-entry: [
-  './client/index.js'
-],
-```
-2. Then, assuming your webpack's output looks something like: 
-```javascript
-output: {
-  filename: 'react-bundle.js',
-  path: './public/javascript',
-},
-```
-Adding it to your application would look just like adding any other local javascript file.
-```html
-<script src="public/javascript/react-bundle.js"></script>
-```
+   The only setup needed is to add webpack to your project, point it to the react-helper registration file, and include the resulting javascript file in your project.
+
+   1. The only requirement react-helper has for the webpack config is that the entry point is the file that registers all of the components using react-helper.
+
+   In the example above it would look something like this:
+   ```javascript
+   entry: [
+     './client/index.js'
+   ],
+   ```
+
+   2. Then, assuming your webpack's output looks something like: 
+
+   ```javascript
+   output: {
+     filename: 'react-bundle.js',
+     path: './public/javascript',
+   },
+   ```
+
+   Adding it to your application would look just like adding any other local javascript file.
+
+   ```html
+   <script src="public/javascript/react-bundle.js"></script>
+   ```
 
 ##Server side rendering
-Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
+   Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
  
 1. In your controller, pass the relative path of your component instead of the registered component name to renderComponent:
    ```
