@@ -9,39 +9,39 @@ add react components to your views, so you can jump right into writing react com
 
   **Controller**:
       
-      ```javascript
-      const reactHelper = require('react-helper');
-      const component = reactHelper.renderComponent('SignUp')
-      res.render('view-to-render', {component})
-      ```
+   ```javascript
+   const reactHelper = require('react-helper');
+   const component = reactHelper.renderComponent('SignUp')
+   res.render('view-to-render', {component})
+   ```
 
   **View**: _example using handlebars templating engine_
       
-      ```html
-      <h1>This view has react in it</h1>
-      {{{component}}}
-      ```
+   ```html
+   <h1>This view has react in it</h1>
+   {{{component}}}
+   ```
 * Pass server-side data to components: You can now _easily_ pass data from your server to your react components.
 
   **Controller**: _example passing results from mongo query to react component_
       
-      ```javascript
-      db.collection('users').find().toArray(function(err, users) {
-        const component = reactHelper.renderComponent('ListUsers', users)
-        return res.render('view-to-render', {component})
-      }
-      ```
+   ```javascript
+   db.collection('users').find().toArray(function(err, users) {
+     const component = reactHelper.renderComponent('ListUsers', users)
+     return res.render('view-to-render', {component})
+   }
+   ```
       
 * Server-side rendering: use the full power of react by server-side rendering your components by just passing the react component (or its relative path) to react helper instead of a string.
 
    **Controller**: _example passing results from mongo query to react component_
    
-      ```javascript
-      const reactHelper = require('react-helper');
-      const SignUp = require('../path/to/SignUp');
-      const component = reactHelper.renderComponent(SignUp) //IT'S THIS EASY
-      res.render('view-to-render', {component})      
-      ```
+   ```javascript
+   const reactHelper = require('react-helper');
+   const SignUp = require('../path/to/SignUp');
+   const component = reactHelper.renderComponent(SignUp) //IT'S THIS EASY
+   res.render('view-to-render', {component})      
+   ```
 
 ##Getting started
    Getting started is simple: 
