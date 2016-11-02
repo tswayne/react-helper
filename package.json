@@ -1,6 +1,6 @@
 {
   "name": "react-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A helper that makes it extremely easy to add react to your node app.",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-register": "^6.18.0",
+    "escape-html": "^1.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   }
