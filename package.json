@@ -1,6 +1,6 @@
 {
   "name": "react-helper",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A helper that makes it extremely easy to add react to your node app.",
   "main": "index.js",
   "scripts": {
@@ -9,14 +9,29 @@
   "keywords": [
     "react",
     "mvc",
-    "node"
+    "node",
+    "express",
+    "sails",
+    "hapi"
   ],
-  "author": "tswayne",
+  "author": {
+    "name": "Tyler Swayne",
+    "email": "swaynetyler@gmail.com",
+    "url": "https://github.com/tswayne"
+  },
   "license": "ISC",
   "dependencies": {
     "babel-register": "^6.18.0",
     "escape-html": "^1.0.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/tswayne/react-helper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tswayne/react-helper/issues",
+    "email": "swaynetyler@gmail.com"
   }
 }
