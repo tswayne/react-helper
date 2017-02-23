@@ -1,6 +1,6 @@
 {
   "name": "react-helper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A helper that makes it extremely easy to add react to your node app.",
   "main": "index.js",
   "scripts": {
