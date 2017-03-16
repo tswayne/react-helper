@@ -1,10 +1,10 @@
-#React Helper
+# React Helper
 ### Easily add react to your pre-existing node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
 are not many tools out there there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
-##Features:
+## Features:
 * Extremely easy to add react components to your views
 
   **Controller**:
@@ -43,7 +43,7 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})      
    ```
 
-##Getting started
+## Getting started
    Getting started is simple: 
 
    _For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
@@ -97,7 +97,7 @@ add react components to your views, so you can jump right into writing react com
    {{{component}}}
    ```
 
-##Setup
+## Setup
    The only setup needed is to add webpack to your project, point it to the react-helper registration file, and include the resulting javascript file in your project.
 
    1. The only requirement react-helper has for the webpack config is that the entry point is the file that registers all of the components using react-helper.
@@ -124,7 +124,7 @@ add react components to your views, so you can jump right into writing react com
    <script src="public/javascript/react-bundle.js"></script>
    ```
 
-##Server side rendering
+## Server side rendering
    Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
  
 1. In your controller, pass the relative path of your component instead of the registered component name to renderComponent:
@@ -142,14 +142,14 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})
    ```
    
-##In progress features:
+## In progress features:
 
 _I am creating this for use in my own project, so this will be progressing quickly_ 
 * Webpack management:  To make it even faster for you to plug in this library and hit the ground running with react, I'm going to include some tools to handle webpack
 * CLI tools: Make an opinionated CLI that sets everything you need up which gets you to writing react in seconds.
 
-##Shout out!
+## Shout out!
 This library is inspired by React On Rails (https://github.com/shakacode/react_on_rails), a library that makes it insanely easy to add react to a Rails application. 
 
-##Contributing
+## Contributing
 Feel free to open issues or pull requests!
