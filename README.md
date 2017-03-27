@@ -1,11 +1,21 @@
 # React Helper
-### Easily add react to your pre-existing node application
+### Easily add react to your pre-existing mvc node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
 are not many tools out there there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
-## Features:
-* Extremely easy to add react components to your views
+# Table of Contents
+  * [Features](#features)
+  * [Getting Started](#getting-started)
+  ** [Using the cli](#cli)
+  ** [Manually adding react-helper](#manual)
+
+## Features: <a id="features"></a>
+* Setting up is a breeze.  Add react to your app with one command using the cli.
+
+  `react-helper init -w`
+  
+* Extremely easy to add react components to your views.
 
   **Controller**:
       
@@ -21,7 +31,7 @@ add react components to your views, so you can jump right into writing react com
    <h1>This view has react in it</h1>
    {{{component}}}
    ```
-* Pass server-side data to components: You can now _easily_ pass data from your server to your react components.
+* Pass server-side data to components: You can _easily_ pass data from your server to your react components.
 
   **Controller**: _example passing results from mongo query to react component_
       
@@ -43,8 +53,8 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})      
    ```
 
-## Getting started
-### Using the CLI
+## Getting started <a id="getting-started"></a>
+### Using the CLI <a id="cli"></a>
    You can now add react-helper to your app with one command!
    
    1. `npm install react-helper -G`
@@ -58,7 +68,7 @@ add react components to your views, so you can jump right into writing react com
      -c, --client-dir <clientDir>    React app directory | Defaults to './client'
      -w, --webpack                   Add webpack and generate config
    
-### Manually add react-helper to your application
+### Manually add react-helper to your application <a id="manual"></a>
    Getting started is simple: 
 
    _For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
