@@ -9,8 +9,9 @@ add react components to your views, so you can jump right into writing react com
   * [Getting Started](#getting-started)
     * [Using the cli](#cli)
     * [Manually adding react-helper](#manual)
-    * [Setup] (#setup)
+    * [Setup](#setup)
   * [Server Side Rendering](#server-side)
+  * [Example application](#example)
 
 <a id="features"></a>
 ## Features:
@@ -176,6 +177,10 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})
    ```
    
+<a id="example"></a>
+## Example
+Check out an example app generated with the react-helper cli using the library - https://github.com/tswayne/react-helper-example
+ 
 ## In progress features:
 
 _I am creating this for use in my own project, so this will be progressing quickly_ 
