@@ -44,18 +44,18 @@ add react components to your views, so you can jump right into writing react com
    ```
 
 ## Getting started
-### CLI
+### Using the CLI
    You can now add react-helper to your app with one command!
    
-   1. `npm install react-helpr -G`
+   1. `npm install react-helper -G`
    2. react-helper init [options]
    
    Options:
    
-     -h, --help                      output usage information
-     -p, --bundle-path <bundlePath>  Bundle path
-     -n, --bundle-name <bundleName>  Bundle name
-     -c, --client-dir <clientDir>    React app directory
+     -h, --help                      output usage information 
+     -p, --bundle-path <bundlePath>  Bundle path | Defaults to './public/javascript'
+     -n, --bundle-name <bundleName>  Bundle name | Defaults to 'bundle.js'
+     -c, --client-dir <clientDir>    React app directory | Defaults to './client'
      -w, --webpack                   Add webpack and generate config
    
 ### Manually add react-helper to your application
