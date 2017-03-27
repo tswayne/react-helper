@@ -44,6 +44,20 @@ add react components to your views, so you can jump right into writing react com
    ```
 
 ## Getting started
+### CLI
+   You can now add react-helper to your app with one command!
+   
+   1. `npm install react-helpr -G`
+   2. react-helper init [options]
+   
+   *react-helper init options:*
+     -h, --help                      output usage information
+     -p, --bundle-path <bundlePath>  Bundle path
+     -n, --bundle-name <bundleName>  Bundle name
+     -c, --client-dir <clientDir>    React app directory
+     -w, --webpack                   Add webpack and generate config
+   
+### Manually add react-helper to your application
    Getting started is simple: 
 
    _For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
@@ -126,7 +140,8 @@ add react components to your views, so you can jump right into writing react com
 
 ## Server side rendering
    Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
- 
+   **If you are using JSX in your components and would like to render your components server side** - you must pre-compile your files, see https://github.com/babel/example-node-server as an example.  More coming soon.
+   
 1. In your controller, pass the relative path of your component instead of the registered component name to renderComponent:
    ```
    const reactHelper = require('react-helper');   
@@ -145,8 +160,6 @@ add react components to your views, so you can jump right into writing react com
 ## In progress features:
 
 _I am creating this for use in my own project, so this will be progressing quickly_ 
-* Webpack management:  To make it even faster for you to plug in this library and hit the ground running with react, I'm going to include some tools to handle webpack
-* CLI tools: Make an opinionated CLI that sets everything you need up which gets you to writing react in seconds.
 
 ## Shout out!
 This library is inspired by React On Rails (https://github.com/shakacode/react_on_rails), a library that makes it insanely easy to add react to a Rails application. 

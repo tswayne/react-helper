@@ -1,34 +1,22 @@
 'use strict'
-const fs = require('fs');
-const path = require('path');
-let reactHelperConfig = {};
-if (fs.existsSync('react-helper.json')) {
-  reactHelperConfig = JSON.parse(fs.readFileSync('react-helper.json'));
-}
-const config = Object.assign({
-  bundlePath: `public/javascript`,
-  bundleName: `bundle.js`,
-  registry: `./client/registry.js`
-}, reactHelperConfig);
-const webpack = require('webpack')
+var webpack = require('webpack')
+var isProdEnvironment = (process.env.NODE_ENV === 'production')
+var path = require('path');
+
 module.exports = {
   cache:    true,
-  devtool: 'cheap-module-eval-source-map',
+  devtool: isProdEnvironment ? 'source-map' : 'cheap-module-eval-source-map',
   context: __dirname,
-  entry: {main: '/Users/tyler/dev/react-helper-example/src/client/registry.js'},// [
- //   'babel-polyfill',
-    //config.registry,
-  //],
+  entry: [
+    'babel-polyfill',
+    'ENTRY_FILE_PATH',
+  ],
   output: {
-    filename: config.bundleName,
-    path: config.bundlePath,
+    filename: 'OUTPUT_FILENAME',
+    path: path.join(__dirname, 'OUTPUT_FILE_PATH'),
   },
   resolve: {
     extensions: ['.js', '.jsx'],
-    modules: ['node_modules', path.join(__dirname, '../../node_modules')]
-  },
-  resolveLoader: {
-    modules: [path.join(__dirname, '../../node_modules')]
   },
   module: {
     rules: [
@@ -37,7 +25,11 @@ module.exports = {
         use: [{
           loader: 'babel-loader',
           options: {
-            extends: path.join(__dirname, '.babelrc'),
+            presets:  [
+              "es2015",
+              "es2016",
+              "react"
+            ]
           }
         }],
         exclude: /node_modules/,

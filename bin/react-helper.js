@@ -1,18 +1,20 @@
 var program = require('commander');
 var exec = require('child_process').exec;
+var fs = require('fs');
 var async = require('async');
 var path = require('path');
 var jsonfile = require('jsonfile')
 
 program
-  .version('1.0.0')
+  .version('cli version 1.0.0')
 
 program
   .command('init')
   .description('add react to your app')
-  .option('-p, --bundle-path <bundlePath>', 'Bundle path', 'public/javascript')
+  .option('-p, --bundle-path <bundlePath>', 'Bundle path', './public/javascript')
   .option('-n, --bundle-name <bundleName>', 'Bundle name', 'bundle.js')
   .option('-c, --client-dir <clientDir>', 'React app directory', './client')
+  .option('-w, --webpack', 'Add webpack and generate config', false)
   .action(function(options) {
     async.series([
       function(callback){
@@ -37,23 +39,37 @@ program
           callback(err);
         })
       },
-      function(callback){
-        var config = {
-          'bundleName': options.bundleName,
-          'bundlePath': options.bundlePath,
-          'registry': `./${options.clientDir}/registry.js`
-        }
-        console.log(`Creating build config`)
-        const filePath = path.resolve(__dirname, 'files/react-helper.json');
-        console.log(filePath)
-        jsonfile.writeFile(filePath, config, function(err) {
-          if (err) {return callback(err)}
+      function(callback) {
+        if (options.webpack) {
+          var entry = `${options.clientDir}/registry.js`;
+          var bundlePath = options.bundlePath;
+          if (!entry.includes('./')) {
+            entry = './' + entry;
+          }
+          if (!bundlePath.includes('./')) {
+            bundlePath = './' + bundlePath;
+          }
 
-          exec(`mv ${filePath} ./ `, function(err, stdout, stderr) {
+          var filePath = path.resolve(__dirname, 'files/webpack.config.js');
+          console.log('Adding webpack to app...')
+          exec('npm install webpack babel-polyfill babel-loader babel-preset-es2015 babel-preset-es2016 babel-preset-react --save-dev', function (err, stdout, stderr) {
             console.log(stdout);
-            callback(err);
-          })
-        })
+            console.log(`Creating webpack config`);
+            fs.readFile(filePath, 'utf-8', function (err, data) {
+              if (err) throw err;
+              var config = data.replace('ENTRY_FILE_PATH', entry)
+                .replace('OUTPUT_FILENAME', options.bundleName)
+                .replace('OUTPUT_FILE_PATH', bundlePath);
+
+              fs.writeFile('./webpack.config.js', config, 'utf-8', function (err) {
+                if (err) throw err;
+                console.log('webpack config created');
+                console.log('to build your bundle run: node_modules/.bin/webpack');
+                callback();
+              });
+            });
+          });
+        }
       }
     ], function(err, results) {
       if (err) {
@@ -64,17 +80,5 @@ program
     })
   })
 
-
-program
-  .command('build-watch')
-  .description('Watch your app for changes and re-build the bundle')
-  .option('-p --path <watchDir>', 'Directory to watch for changes', './client')
-  .action(function(options) {
-    webpackDir = path.resolve(__dirname, '../node_modules/.bin/webpack');
-    webpackConfig = path.resolve(__dirname, './lib/webpack.config.js');
-    exec(`${webpackDir} --config ${webpackConfig} ${options.watchDir} --display-error-details`, function(err, stdout, stderr) {
-      console.log(stdout);
-    })
-  })
 
 program.parse(process.argv);
