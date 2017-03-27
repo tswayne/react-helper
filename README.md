@@ -50,7 +50,8 @@ add react components to your views, so you can jump right into writing react com
    1. `npm install react-helpr -G`
    2. react-helper init [options]
    
-   *react-helper init options:*
+   Options:
+   
      -h, --help                      output usage information
      -p, --bundle-path <bundlePath>  Bundle path
      -n, --bundle-name <bundleName>  Bundle name
