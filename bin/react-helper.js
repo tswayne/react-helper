@@ -3,7 +3,6 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var async = require('async');
 var path = require('path');
-var jsonfile = require('jsonfile')
 
 program
   .version('cli version 1.0.0')
