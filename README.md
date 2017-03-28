@@ -5,10 +5,9 @@ are not many tools out there there to help those who want to add react to an exi
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
 ## Installing
-### CLI install
+##### CLI install
 `npm install -g react-helper`
-
-### Adding to your app
+##### Adding to your app
 `npm install react-helper --save`
 
 ### Table of Contents
@@ -21,6 +20,7 @@ add react components to your views, so you can jump right into writing react com
   * [Example application](#example)
 
 <a id="features"></a>
+
 ## Features:
 * Setting up is a breeze.  Add react to your app with one command using the cli.
 
@@ -64,8 +64,11 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})      
    ```
 <a id="getting-started"></a>
+
 ## Getting started
+
 <a id="cli"></a>
+
 ### Using the CLI
    You can now add react-helper to your app with one command!
    
@@ -81,6 +84,7 @@ add react components to your views, so you can jump right into writing react com
      -w, --webpack                   Add webpack and generate config
    
 <a id="manual"></a>
+
 ### Manually add react-helper to your application
    Getting started is simple: 
 
@@ -134,7 +138,9 @@ add react components to your views, so you can jump right into writing react com
    <h1>This view has react in it</h1>
    {{{component}}}
    ```
+   
 <a id="setup"></a>
+
 ### Setup
   _You can generate a webpack config when adding react-helper to your application with the CLI using the -w option_
    
@@ -165,6 +171,7 @@ add react components to your views, so you can jump right into writing react com
    ```
    
 <a id="server-side"></a>
+
 ## Server side rendering
    Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
    **If you are using JSX in your components and would like to render your components server side** - you must pre-compile your files, see https://github.com/babel/example-node-server as an example.  More coming soon.
@@ -185,6 +192,7 @@ add react components to your views, so you can jump right into writing react com
    ```
    
 <a id="example"></a>
+
 ## Example
 Check out an example app generated with the react-helper cli using the library - https://github.com/tswayne/react-helper-example
  
