@@ -1,5 +1,8 @@
 # Change Log
 
+## [2.0.3] - 3/27/2017
+- Bug fix: Update readme for npm
+
 ## [2.0.2] - 3/27/2017
 - Bug fix: Remove binary file extension
 
