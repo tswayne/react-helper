@@ -1,11 +1,25 @@
 # React Helper
-### Easily add react to your pre-existing node application
+### Easily add react to your pre-existing mvc node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
 are not many tools out there there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
+### Table of Contents
+  * [Features](#features)
+  * [Getting Started](#getting-started)
+    * [Using the cli](#cli)
+    * [Manually adding react-helper](#manual)
+    * [Setup](#setup)
+  * [Server Side Rendering](#server-side)
+  * [Example application](#example)
+
+<a id="features"></a>
 ## Features:
-* Extremely easy to add react components to your views
+* Setting up is a breeze.  Add react to your app with one command using the cli.
+
+  `react-helper init -w`
+  
+* Extremely easy to add react components to your views.
 
   **Controller**:
       
@@ -21,7 +35,7 @@ add react components to your views, so you can jump right into writing react com
    <h1>This view has react in it</h1>
    {{{component}}}
    ```
-* Pass server-side data to components: You can now _easily_ pass data from your server to your react components.
+* Pass server-side data to components: You can _easily_ pass data from your server to your react components.
 
   **Controller**: _example passing results from mongo query to react component_
       
@@ -42,8 +56,25 @@ add react components to your views, so you can jump right into writing react com
    const component = reactHelper.renderComponent(SignUp) //IT'S THIS EASY
    res.render('view-to-render', {component})      
    ```
-
+<a id="getting-started"></a>
 ## Getting started
+<a id="cli"></a>
+### Using the CLI
+   You can now add react-helper to your app with one command!
+   
+   1. `npm install react-helper -G`
+   2. react-helper init [options]
+   
+   Options:
+   
+     -h, --help                      output usage information 
+     -p, --bundle-path <bundlePath>  Bundle path | Defaults to './public/javascript'
+     -n, --bundle-name <bundleName>  Bundle name | Defaults to 'bundle.js'
+     -c, --client-dir <clientDir>    React app directory | Defaults to './client'
+     -w, --webpack                   Add webpack and generate config
+   
+<a id="manual"></a>
+### Manually add react-helper to your application
    Getting started is simple: 
 
    _For the examples, I will be using showing snippets of code from an express application using handlebars templating engine, but this helper will work with any framework and templating engine_
@@ -96,8 +127,10 @@ add react components to your views, so you can jump right into writing react com
    <h1>This view has react in it</h1>
    {{{component}}}
    ```
-
-## Setup
+<a id="setup"></a>
+### Setup
+  _You can generate a webpack config when adding react-helper to your application with the CLI using the -w option_
+   
    The only setup needed is to add webpack to your project, point it to the react-helper registration file, and include the resulting javascript file in your project.
 
    1. The only requirement react-helper has for the webpack config is that the entry point is the file that registers all of the components using react-helper.
@@ -123,10 +156,12 @@ add react components to your views, so you can jump right into writing react com
    ```html
    <script src="public/javascript/react-bundle.js"></script>
    ```
-
+   
+<a id="server-side"></a>
 ## Server side rendering
    Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
- 
+   **If you are using JSX in your components and would like to render your components server side** - you must pre-compile your files, see https://github.com/babel/example-node-server as an example.  More coming soon.
+   
 1. In your controller, pass the relative path of your component instead of the registered component name to renderComponent:
    ```
    const reactHelper = require('react-helper');   
@@ -142,11 +177,13 @@ add react components to your views, so you can jump right into writing react com
    res.render('view-to-render', {component})
    ```
    
+<a id="example"></a>
+## Example
+Check out an example app generated with the react-helper cli using the library - https://github.com/tswayne/react-helper-example
+ 
 ## In progress features:
 
 _I am creating this for use in my own project, so this will be progressing quickly_ 
-* Webpack management:  To make it even faster for you to plug in this library and hit the ground running with react, I'm going to include some tools to handle webpack
-* CLI tools: Make an opinionated CLI that sets everything you need up which gets you to writing react in seconds.
 
 ## Shout out!
 This library is inspired by React On Rails (https://github.com/shakacode/react_on_rails), a library that makes it insanely easy to add react to a Rails application. 
