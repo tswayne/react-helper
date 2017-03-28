@@ -4,6 +4,13 @@ There are tons of resources and tools out there to help developers get started w
 are not many tools out there there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
+## Installing
+### CLI install
+`npm install -g react-helper`
+
+### Adding to your app
+`npm install react-helper --save`
+
 ### Table of Contents
   * [Features](#features)
   * [Getting Started](#getting-started)
