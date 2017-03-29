@@ -7,6 +7,7 @@ add react components to your views, so you can jump right into writing react com
 ## Installing
 ##### CLI install
 `npm install -g react-helper`
+
 ##### Adding to your app
 `npm install react-helper --save`
 
