@@ -1,5 +1,9 @@
 # Change Log
 
+## [2.0.5] - 3/29/2017
+- Changed const with var
+- Bug fix: Fix prop string if no props are added
+
 ## [2.0.4] - 3/28/2017
 - Bug fix: Update readme for npm
 
