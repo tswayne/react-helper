@@ -18,6 +18,7 @@ add react components to your views, so you can jump right into writing react com
     * [Manually adding react-helper](#manual)
     * [Setup](#setup)
   * [Server Side Rendering](#server-side)
+  * [Express, Sails, and Hapi](#frameworks)
   * [Example application](#example)
 
 <a id="features"></a>
@@ -191,6 +192,11 @@ add react components to your views, so you can jump right into writing react com
    const component = reactHelper.renderComponent(SignUp) //IT'S THIS EASY
    res.render('view-to-render', {component})
    ```
+   
+<a id="frameworks"></a>
+
+## Express, Sails, and Hapi
+Add react-helper to your favorite node framework by using [express-react-helper](https://github.com/tswayne/express-react-helper) or [hapi-react-helper](https://github.com/tswayne/hapi-react-helper)!
    
 <a id="example"></a>
 
