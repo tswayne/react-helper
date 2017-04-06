@@ -1,5 +1,5 @@
 # React Helper
-### Easily add react to your pre-existing mvc node application
+### Easily add react to your pre-existing (or new) mvc node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
 are not many tools out there to help those who want to add react to an existing app (built with node).  React-helper makes it extremely easy to
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
