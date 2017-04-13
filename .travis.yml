@@ -3,3 +3,7 @@ install: npm install
 node_js:
   - "node"
   - "4"
+notifications:
+  email:
+    on_success: never
+    on_failure: always
