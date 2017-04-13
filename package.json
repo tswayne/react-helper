@@ -1,10 +1,10 @@
 {
   "name": "react-helper",
-  "version": "2.0.5",
+  "version": "2.1.0",
   "description": "A helper that makes it extremely easy to add react to your node app.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/mocha/bin/mocha --recursive"
   },
   "keywords": [
     "react",
@@ -22,11 +22,8 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.1.5",
-    "babel-register": "^6.22.0",
     "commander": "^2.9.0",
-    "escape-html": "^1.0.3",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "escape-html": "^1.0.3"
   },
   "repository": {
     "type": "git",
@@ -38,5 +35,13 @@
   "bugs": {
     "url": "https://github.com/tswayne/react-helper/issues",
     "email": "swaynetyler@gmail.com"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "jsdom": "^9.12.0",
+    "mocha": "^3.2.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "sinon": "^2.1.0"
   }
 }

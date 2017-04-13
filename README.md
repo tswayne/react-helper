@@ -1,3 +1,6 @@
+[![npm](https://img.shields.io/npm/v/react-helper.svg)](https://www.npmjs.com/package/react-helper)
+[![Build Status](https://travis-ci.org/tswayne/react-helper.svg?branch=master)](https://travis-ci.org/tswayne/react-helper)
+
 # React Helper
 ### Easily add react to your pre-existing (or new) mvc node application
 There are tons of resources and tools out there to help developers get started with react and start a fresh new react app; however, there
