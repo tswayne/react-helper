@@ -1,5 +1,10 @@
 # Change Log
 
+## [2.1.0] - 4/13/2017
+- Refactored out functions to their own directories and files
+- Added tests, shields, and travis config
+- Cleaned up package.json dependencies
+
 ## [2.0.5] - 3/29/2017
 - Changed const with var
 - Bug fix: Fix prop string if no props are added
