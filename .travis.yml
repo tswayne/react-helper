@@ -3,4 +3,3 @@ install: npm install
 node_js:
   - "node"
   - "4"
-  - "0.12"
