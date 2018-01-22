@@ -1,5 +1,9 @@
 # Change Log
 
+## [3.0.0] - 1/21/2017
+- Changes for react 16
+- Added ability to set container's id instead of using component name
+
 ## [2.1.0] - 4/13/2017
 - Refactored out functions to their own directories and files
 - Added tests, shields, and travis config

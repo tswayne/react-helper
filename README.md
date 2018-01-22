@@ -179,16 +179,17 @@ add react components to your views, so you can jump right into writing react com
 
 ## Server side rendering
    Server-side rendering can be very [useful](https://www.smashingmagazine.com/2016/03/server-side-rendering-react-node-express/).  This library makes it very easy to server-side render your components.  There are two methods to server-side rendering:
-   **If you are using JSX in your components and would like to render your components server side** - you must pre-compile your files, see https://github.com/babel/example-node-server as an example.  More coming soon.
+   **If you are using JSX in your components and would like to render your components server side** - you must use [babel-register](https://babeljs.io/docs/usage/babel-register/) or pre-compile your files, see https://github.com/babel/example-node-server as an example.  More coming soon.
    
 1. In your controller, pass the relative path of your component instead of the registered component name to renderComponent:
    ```
-   const reactHelper = require('react-helper');   
-   const component = reactHelper.renderComponent('../path/to/SignUp')
+   const reactHelper = require('react-helper')
+   const path = require('path')
+   const component = reactHelper.renderComponent(path.join(__dirname, '../path/to/SignUp'))
    res.render('view-to-render', {component})
    ```
    
-2. Pass the component itself to renderComponent.  **Note** - If you use this method you need to add "babel-register" to your package.json **and** require react-helper **before** your component.
+2. Pass the component itself to renderComponent.
    ```
    const reactHelper = require('react-helper');
    const SignUp = require('../path/to/SignUp');
