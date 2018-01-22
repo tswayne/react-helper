@@ -1,6 +1,9 @@
 # Change Log
 
 ## [3.0.0] - 1/21/2017
+- Relax peer dependency
+
+## [3.0.0] - 1/21/2017
 - Changes for react 16
 - Added ability to set container's id instead of using component name
 
