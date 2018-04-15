@@ -33,6 +33,7 @@ module.exports = {
           options: {
             presets:  [
               "env",
+              "react"
             ],
             plugins: [
               "transform-class-properties",

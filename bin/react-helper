@@ -52,7 +52,7 @@ program
 
           var filePath = path.resolve(__dirname, 'files/webpack.config.js');
           console.log('Adding webpack to app...')
-          exec('npm install webpack babel-polyfill babel-loader babel-preset-env babel-core babel-plugin-transform-object-rest-spread babel-plugin-transform-class-properties --save-dev', function (err, stdout, stderr) {
+          exec('npm install webpack babel-polyfill babel-loader babel-preset-env babel-preset-react babel-core babel-plugin-transform-object-rest-spread babel-plugin-transform-class-properties --save-dev', function (err, stdout, stderr) {
             console.log(stdout);
             console.log(`Creating webpack config`);
             fs.readFile(filePath, 'utf-8', function (err, data) {

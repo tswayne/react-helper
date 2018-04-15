@@ -1,5 +1,8 @@
 # Change Log
 
+## [3.0.3] - 4/15/2018
+- Re-add react-preset to cli generated webpack conf
+
 ## [3.0.2] - 4/15/2018
 - Bring cli up to date with latest webpack updates
 
