@@ -1,9 +1,12 @@
 # Change Log
 
-## [3.0.0] - 1/21/2017
+## [3.0.2] - 4/15/2018
+- Bring cli up to date with latest webpack updates
+
+## [3.0.1] - 1/21/2018
 - Relax peer dependency
 
-## [3.0.0] - 1/21/2017
+## [3.0.0] - 1/21/2018
 - Changes for react 16
 - Added ability to set container's id instead of using component name
 
