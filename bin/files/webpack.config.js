@@ -1,19 +1,25 @@
 'use strict'
-var webpack = require('webpack')
-var isProdEnvironment = (process.env.NODE_ENV === 'production')
 var path = require('path');
+
+/**
+ *
+ * This webpack file is intended for development only.  To create a production ready bundle
+ * see https://webpack.js.org/guides/production/
+ *
+ */
 
 module.exports = {
   cache:    true,
-  devtool: isProdEnvironment ? 'source-map' : 'cheap-module-eval-source-map',
+  mode: 'development',
+  devtool: 'cheap-module-eval-source-map',
   context: __dirname,
   entry: [
     'babel-polyfill',
     'ENTRY_FILE_PATH',
   ],
   output: {
-    filename: 'OUTPUT_FILENAME',
     path: path.join(__dirname, 'OUTPUT_FILE_PATH'),
+    filename: 'OUTPUT_FILENAME',
   },
   resolve: {
     extensions: ['.js', '.jsx'],
@@ -26,9 +32,11 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets:  [
-              "es2015",
-              "es2016",
-              "react"
+              "env",
+            ],
+            plugins: [
+              "transform-class-properties",
+              "transform-object-rest-spread"
             ]
           }
         }],

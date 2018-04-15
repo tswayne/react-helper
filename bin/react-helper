@@ -6,7 +6,7 @@ var async = require('async');
 var path = require('path');
 
 program
-  .version('cli version 1.0.0')
+  .version('cli version 2.0.0')
 
 program
   .command('init')
@@ -52,7 +52,7 @@ program
 
           var filePath = path.resolve(__dirname, 'files/webpack.config.js');
           console.log('Adding webpack to app...')
-          exec('npm install webpack babel-polyfill babel-loader babel-preset-es2015 babel-preset-es2016 babel-preset-react --save-dev', function (err, stdout, stderr) {
+          exec('npm install webpack babel-polyfill babel-loader babel-preset-env babel-core babel-plugin-transform-object-rest-spread babel-plugin-transform-class-properties --save-dev', function (err, stdout, stderr) {
             console.log(stdout);
             console.log(`Creating webpack config`);
             fs.readFile(filePath, 'utf-8', function (err, data) {
