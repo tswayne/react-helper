@@ -193,7 +193,7 @@ add react components to your views, so you can jump right into writing react com
    ```
    const reactHelper = require('react-helper');
    const SignUp = require('../path/to/SignUp');
-   const component = reactHelper.renderComponent(SignUp) //IT'S THIS EASY
+   const component = reactHelper.renderComponent(SignUp)
    res.render('view-to-render', {component})
    ```
    

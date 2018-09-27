@@ -1,5 +1,8 @@
 # Change Log
 
+## [3.1.0] - 4/15/2018
+- Feature: Pass in props on register
+
 ## [3.0.3] - 4/15/2018
 - Re-add react-preset to cli generated webpack conf
 
