@@ -1,5 +1,8 @@
 # Change Log
 
+## [3.2.0] - 4/15/2018
+- Feature: Create class to expose helper functionality as needed  
+
 ## [3.1.0] - 4/15/2018
 - Feature: Pass in props on register
 
