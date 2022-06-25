@@ -1,6 +1,6 @@
 {
   "name": "react-helper",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "A helper that makes it extremely easy to add react to your node app.",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,8 @@
     "escape-html": "^1.0.3"
   },
   "peerDependencies": {
-    "react": ">=16.0.0",
-    "react-dom": ">=16.0.0"
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
   },
   "repository": {
     "type": "git",
@@ -44,8 +44,8 @@
     "chai": "^3.5.0",
     "jsdom": "^9.12.0",
     "mocha": "^3.2.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sinon": "^2.1.0"
   }
 }

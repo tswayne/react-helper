@@ -1,5 +1,8 @@
 # Change Log
 
+## [4.0.0] - 6/25/2022
+- Upgrade to react 18
+
 ## [3.2.0] - 4/15/2018
 - Feature: Create class to expose helper functionality as needed  
 

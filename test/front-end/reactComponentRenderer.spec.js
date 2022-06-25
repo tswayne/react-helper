@@ -7,25 +7,26 @@ const chai = require('chai');
 const assert = chai.assert;
 const jsdom = require("jsdom");
 const React = require('react');
-const reactDom = require('react-dom');
+const reactDom = require('react-dom/client');
 const sinon = require('sinon');
 
 const reactComponentRenderer = require('../../lib/front-end/reactComponentRenderer');
 const reactCreateElementSpy = sinon.spy();
 const reactDomRenderSpy = sinon.spy();
+const createRootSpy = sinon.spy();
 const reactDomHydrateSpy = sinon.spy();
 
 suite('reactComponentRenderer', function() {
   beforeEach(function() {
     sinon.stub(React, 'createElement').callsFake(reactCreateElementSpy)
-    sinon.stub(reactDom, 'render').callsFake(reactDomRenderSpy)
-    sinon.stub(reactDom, 'hydrate').callsFake(reactDomHydrateSpy)
+    sinon.stub(reactDom, 'createRoot').callsFake(createRootSpy).returns({ render: reactDomRenderSpy })
+    sinon.stub(reactDom, 'hydrateRoot').callsFake(reactDomHydrateSpy)
   });
 
   afterEach(function() {
     React.createElement.restore();
-    reactDom.render.restore();
-    reactDom.hydrate.restore();
+    reactDom.createRoot.restore();
+    reactDom.hydrateRoot.restore();
     reactCreateElementSpy.reset();
     reactDomRenderSpy.reset();
   });
@@ -36,7 +37,8 @@ suite('reactComponentRenderer', function() {
     global.document = jsdom.jsdom(container);
 
     reactComponentRenderer.findContainerAndRenderComponent({MyComponent: 'DummyReactComponentStub'})
-    assert.equal(reactDomRenderSpy.args[0][1].id, 'react-helper-component-mycomponent');
+    assert.isTrue(reactDomRenderSpy.called)
+    assert.equal(reactDom.createRoot.args[0][0].id, 'react-helper-component-mycomponent');
     assert.equal(reactCreateElementSpy.args[0][0], 'DummyReactComponentStub');
     assert.deepEqual(reactCreateElementSpy.args[0][1], {aProp: 'a value'});
   });
@@ -47,7 +49,7 @@ suite('reactComponentRenderer', function() {
     global.document = jsdom.jsdom(container);
 
     reactComponentRenderer.findContainerAndRenderComponent({MyComponent: 'DummyReactComponentStub'}, true)
-    assert.equal(reactDomHydrateSpy.args[0][1].id, 'react-helper-component-mycomponent');
+    assert.equal(reactDomHydrateSpy.args[0][0].id, 'react-helper-component-mycomponent');
   });
 
   test('findContainerAndRenderComponent renders react component to react div no props when data-component-properties is empty', function() {
@@ -56,7 +58,8 @@ suite('reactComponentRenderer', function() {
     global.document = jsdom.jsdom(container);
 
     reactComponentRenderer.findContainerAndRenderComponent({MyComponent: 'DummyReactComponentStub'})
-    assert.equal(reactDomRenderSpy.args[0][1].id, 'react-helper-component-mycomponent');
+    assert.isTrue(reactDomRenderSpy.called)
+    assert.equal(reactDom.createRoot.args[0][0].id, 'react-helper-component-mycomponent');
     assert.equal(reactCreateElementSpy.args[0][0], 'DummyReactComponentStub');
     assert.deepEqual(reactCreateElementSpy.args[0][1], {});
   });
