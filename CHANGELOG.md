@@ -1,5 +1,8 @@
 # Change Log
 
+## [5.0.0] - 3/5/2023
+- Remove cli functionality and cleanup/update packages
+
 ## [4.0.0] - 6/25/2022
 - Upgrade to react 18
 

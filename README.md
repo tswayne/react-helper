@@ -8,16 +8,12 @@ are not many tools out there to help those who want to add react to an existing 
 add react components to your views, so you can jump right into writing react components without having to worry too much about setup.
 
 ## Installing
-##### CLI install
-`npm install -g react-helper`
-
 ##### Adding to your app
 `npm install react-helper --save`
 
 ### Table of Contents
   * [Features](#features)
   * [Getting Started](#getting-started)
-    * [Using the cli](#cli)
     * [Manually adding react-helper](#manual)
     * [Setup](#setup)
   * [Server Side Rendering](#server-side)
@@ -71,22 +67,6 @@ add react components to your views, so you can jump right into writing react com
 <a id="getting-started"></a>
 
 ## Getting started
-
-<a id="cli"></a>
-
-### Using the CLI
-   You can now add react-helper to your app with one command!
-   
-   1. `npm install react-helper -G`
-   2. react-helper init [options]
-   
-   Options:
-   
-     -h, --help                      output usage information 
-     -p, --bundle-path <bundlePath>  Bundle path | Defaults to './public/javascript'
-     -n, --bundle-name <bundleName>  Bundle name | Defaults to 'bundle.js'
-     -c, --client-dir <clientDir>    React app directory | Defaults to './client'
-     -w, --webpack                   Add webpack and generate config
    
 <a id="manual"></a>
 
@@ -147,7 +127,6 @@ add react components to your views, so you can jump right into writing react com
 <a id="setup"></a>
 
 ### Setup
-  _You can generate a webpack config when adding react-helper to your application with the CLI using the -w option_
    
    The only setup needed is to add webpack to your project, point it to the react-helper registration file, and include the resulting javascript file in your project.
 
@@ -202,15 +181,6 @@ add react components to your views, so you can jump right into writing react com
 ## Express, Sails, and Hapi
 Add react-helper to your favorite node framework by using [express-react-helper](https://github.com/tswayne/express-react-helper) or [hapi-react-helper](https://github.com/tswayne/hapi-react-helper)!
    
-<a id="example"></a>
-
-## Example
-Check out an example app generated with the react-helper cli using the library - https://github.com/tswayne/react-helper-example
- 
-## In progress features:
-
-_I am creating this for use in my own project, so this will be progressing quickly_ 
-
 ## Shout out!
 This library is inspired by React On Rails (https://github.com/shakacode/react_on_rails), a library that makes it insanely easy to add react to a Rails application. 
 
