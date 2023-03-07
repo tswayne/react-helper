@@ -1,5 +1,8 @@
 # Change Log
 
+## [5.0.1] - 3/6/2023
+- Port standalone Helper to react 18 (missed in 4.0 change).  Remove dupe code. 
+
 ## [5.0.0] - 3/5/2023
 - Remove cli functionality and cleanup/update packages
 

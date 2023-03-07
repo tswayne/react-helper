@@ -7,12 +7,12 @@ const containerRender = require('../../lib/back-end/containerRenderer');
 
 suite('containerRender', function() {
   test('renderContainer renders div with proper id and component-properties', function() {
-    const expectedContainer = '<div id="react-helper-component-mycomponent" data-component-properties="{&quot;aProp&quot;:&quot;a value&quot;}"></div>';
+    const expectedContainer = '<div id="react-helper-component-mycomponent" data-component-properties="{&quot;aProp&quot;:&quot;a value&quot;}" data-server-rendered="false" ></div>';
     assert.equal(containerRender.renderContainer('MyComponent', {aProp: 'a value'}), expectedContainer);
   });
 
   test('renderContainer with only component name renders empty component-properties', function() {
-    const expectedContainer = '<div id="react-helper-component-mycomponent" data-component-properties=""></div>';
+    const expectedContainer = '<div id="react-helper-component-mycomponent" data-component-properties="" data-server-rendered="false" ></div>';
     assert.equal(containerRender.renderContainer('MyComponent'), expectedContainer);
   });
 });
